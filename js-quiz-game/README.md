@@ -2,6 +2,10 @@
 
 #### File Paths:
 
+So see how the game works check out this link: 
+
+https://vimeo.com/152612712
+
 - App.js is where you'll be adding your features using jQuery, it is located in the assets folder.
 
 - data_generator is where the questions and helper functions, and data reside. It is also located in the assets folder.
