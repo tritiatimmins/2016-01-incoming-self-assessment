@@ -25,6 +25,7 @@ $(document).ready(function(){
 	 	//need to set the user input value equal to the randomQuestion.choices[i]
 	 	var $input = $("<ol><input type='radio' name='user_input' value='"+randomQuestion.choices[i]+"'>" + randomQuestion.choices[i] + "<ol></input>");
 	 		console.log(randomQuestion.correct);
+	 	
 	 	//append to the choices class
 
 	 		$input.appendTo(".choices");
@@ -34,14 +35,20 @@ $(document).ready(function(){
 
 	//adds a random question and its corresponding answers to our currentForm
 	var QandAgenerator = function(){
-		
 		//get new random questions via app.randomQuestion?
 		//somehow get these new questions to appear on the page
 		//how can we call it in a loop
 		//while some condition is met keep generating OR if some condition is met add a new question
+		
+		//set the same random question generator equal to a new variable and call this variable in the answer generator function
+		newRandomQuestion = app.questions[Math.floor(Math.random()* app.questions.length)];
+		
+		//attaches the first question to the form onload
+		$currentForm.prepend('<h3 class = "question"> Question: ' + newRandomQuestion.question + '</h3>' + '<br><br>');
 
-
-
+		//call answerGenerator with different random question
+		answerGenerator(newRandomQuestion);
+	
 	};
 
 	// checks the answer when the user clicks "Am I right?"
@@ -54,7 +61,7 @@ $(document).ready(function(){
 		// console.log($userInput.val());
 
 		//if(app.randomQuestion.choices[$userInput.val()] === app.randomQuestion.correct){
-			if($userInput === app.randomQuestion.correct) {
+			if( ($userInput === firstRandomQuestion.correct)  || ($userInput === newRandomQuestion.correct)){
 			app.successDisplay();
 			app.countIncrementor();
 			$currentCount.empty().append(app.count);
