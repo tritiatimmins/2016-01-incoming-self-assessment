@@ -21,7 +21,9 @@ $(document).ready(function(){
 	 	for (var i = 0; i < randomQuestion.choices.length; i ++) {
 	 	
 	 	//make a node for the user input.
-	 	var $input = $("<ol><input type='radio' name='user_input'>" + randomQuestion.choices[i] + "<ol></input>");
+	 	//needed to add the user_input value 
+	 	//need to set the user input value equal to the randomQuestion.choices[i]
+	 	var $input = $("<ol><input type='radio' name='user_input' value='"+randomQuestion.choices[i]+"'>" + randomQuestion.choices[i] + "<ol></input>");
 	 		console.log(randomQuestion.correct);
 	 	//append to the choices class
 
@@ -37,17 +39,22 @@ $(document).ready(function(){
 		//somehow get these new questions to appear on the page
 		//how can we call it in a loop
 		//while some condition is met keep generating OR if some condition is met add a new question
-		
+
+
+
 	};
 
 	// checks the answer when the user clicks "Am I right?"
 	$('#checkAnswer').on('click',function(){
 		event.preventDefault();
 		// represents whichever check box the user clicks on
-		$userInput = $('input:checked');
-		console.log($userInput.val());
+		//adding.val() takes the value from the checked input, otherwise if we dont have .val() it will just list the name of the radio button
+		$userInput = $('input:checked').val();
+		
+		// console.log($userInput.val());
 
-		if(app.randomQuestion.choices[$userInput.val()] === app.randomQuestion.correct ){
+		//if(app.randomQuestion.choices[$userInput.val()] === app.randomQuestion.correct){
+			if($userInput === app.randomQuestion.correct) {
 			app.successDisplay();
 			app.countIncrementor();
 			$currentCount.empty().append(app.count);
