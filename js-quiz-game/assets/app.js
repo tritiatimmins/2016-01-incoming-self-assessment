@@ -9,13 +9,15 @@ $(document).ready(function(){
 	var firstRandomQuestion = app.questions[Math.floor(Math.random()* app.questions.length)];
 	
 	//attaches the counter to the highscore on page
+	
+	$("#counter").text(app.count);
 
 	//attaches the first question to the form onload
 	$currentForm.prepend('<h3 class = "question"> Question: ' + firstRandomQuestion.question + '</h3>' + '<br><br>');
 
 	// appends all four answers to the corresponding question
 	var answerGenerator = function (randomQuestion){
-
+		
 	};
 
 	//adds a random question and its corresponding answers to our currentForm

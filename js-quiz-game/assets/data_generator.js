@@ -160,8 +160,8 @@ app.successDisplay = function(){
 };
 
 app.failureDisplay = function(){
-	// $('body').empty().append('<div class="wrong"><img src = "photos/redcheckmark.png"></div>');
-	// $('.wrong').append('<div>Use the link below to get better!</div>');
+	$('body').empty().append('<div class="wrong"><img src = "photos/redcheckmark.png"></div>');
+	$('.wrong').append('<div>Use the link below to get better!</div>');
 	$('#checkAnswer').hide();
 	$('.jsPic').hide();
 	$('form').empty().append('<div class="wrong"><img src = "photos/redcheckmark.png"></div><br><br>').append('<button class="btn-lg" id="restart"> Start Over');
