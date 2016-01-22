@@ -22,7 +22,9 @@ $(document).ready(function(){
 	 	
 	 	//make a node for the user input.
 	 	var $input = $("<ol><input type='radio' name='user_input'>" + randomQuestion.choices[i] + "<ol></input>");
+	 		console.log(randomQuestion.correct);
 	 	//append to the choices class
+
 	 		$input.appendTo(".choices");
 	 	}
 		
@@ -30,7 +32,10 @@ $(document).ready(function(){
 
 	//adds a random question and its corresponding answers to our currentForm
 	var QandAgenerator = function(){
-			//use the math.random function to make a random question
+		
+
+		answerGenerator(app.randomQuestion);
+		
 	};
 
 	// checks the answer when the user clicks "Am I right?"
@@ -38,6 +43,7 @@ $(document).ready(function(){
 		event.preventDefault();
 		// represents whichever check box the user clicks on
 		$userInput = $('input:checked');
+		console.log($userInput.val());
 
 		if(app.randomQuestion.choices[$userInput.val()] === app.randomQuestion.correct ){
 			app.successDisplay();
@@ -54,5 +60,6 @@ $(document).ready(function(){
 	});
 
 	answerGenerator(firstRandomQuestion);
+
 });
 
