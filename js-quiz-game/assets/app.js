@@ -33,8 +33,10 @@ $(document).ready(function(){
 	//adds a random question and its corresponding answers to our currentForm
 	var QandAgenerator = function(){
 		
-
-		answerGenerator(app.randomQuestion);
+		//get new random questions via app.randomQuestion?
+		//somehow get these new questions to appear on the page
+		//how can we call it in a loop
+		//while some condition is met keep generating OR if some condition is met add a new question
 		
 	};
 
