@@ -9,7 +9,6 @@ $(document).ready(function(){
 	var firstRandomQuestion = app.questions[Math.floor(Math.random()* app.questions.length)];
 	
 	//attaches the counter to the highscore on page
-	
 	$("#counter").text(app.count);
 
 	//attaches the first question to the form onload
@@ -17,12 +16,21 @@ $(document).ready(function(){
 
 	// appends all four answers to the corresponding question
 	var answerGenerator = function (randomQuestion){
+	 	//somehow get the answers part of the object to show when the question appears
+	 	//loop through the choices
+	 	for (var i = 0; i < randomQuestion.choices.length; i ++) {
+	 	
+	 	//make a node for the user input.
+	 	var $input = $("<ol><input type='radio' name='user_input'>" + randomQuestion.choices[i] + "<ol></input>");
+	 	//append to the choices class
+	 		$input.appendTo(".choices");
+	 	}
 		
 	};
 
 	//adds a random question and its corresponding answers to our currentForm
 	var QandAgenerator = function(){
-
+			//use the math.random function to make a random question
 	};
 
 	// checks the answer when the user clicks "Am I right?"

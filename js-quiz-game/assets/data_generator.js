@@ -98,7 +98,7 @@ app.questions = [{
 		
 	},{
 		'question':'Who invented the javascript programming language?',
-		'choices': ['Tennis Ritchie','ames Gosling','Brendan Eich'],
+		'choices': ['Tennis Ritchie','James Gosling','Brendan Eich'],
 		'correct': 'Brendan Eich',
 		'refPage': 'https://en.wikipedia.org/wiki/JavaScript'
 		
